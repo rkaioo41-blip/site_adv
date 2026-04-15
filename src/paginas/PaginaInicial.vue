@@ -2,37 +2,37 @@
   <div class="pagina-inicial">
     <BarraNavegacao />
 
-    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="container">
         <div class="hero-conteudo">
-          <span class="hero-tagline">DIREITO EMPRESARIAL E ESTRATÉGICO</span>
+          <span class="hero-tagline">Direito Empresarial e Estratégico</span>
           <h1 class="hero-titulo">
             Defesa jurídica e estratégia
             <span class="texto-dourado">no mais alto nível</span>
           </h1>
           <p class="hero-descricao">
-            Comprometimento, excelência e discrição em cada caso. Sua defesa é nossa prioridade
-            absoluta.
+            Comprometimento, excelência e discrição em cada caso. Sua defesa é nossa prioridade absoluta.
           </p>
           <div class="hero-botoes">
             <router-link to="/contato" class="botao-primario">
               AGENDAR CONSULTA
               <span class="seta">→</span>
             </router-link>
-            <router-link to="/areas" class="botao-secundario"> CONHEÇA NOSSAS ÁREAS </router-link>
+            <router-link to="/areas" class="botao-secundario">
+              Conheça nossas áreas
+            </router-link>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Áreas de Atuação -->
     <section class="areas">
       <div class="container">
         <div class="cabecalho-secao">
-          <span class="tag-secao">EXPERTISE</span>
+          <span class="tag-secao">Expertise</span>
           <h2>Áreas de atuação</h2>
+          <div class="linha-decorativa"></div>
           <p>Atuação estratégica em todas as esferas do direito empresarial</p>
         </div>
 
@@ -40,61 +40,55 @@
           <div class="card-area">
             <div class="icone-area">⚖️</div>
             <h3>Direito Civil</h3>
-            <p>
-              Atuação completa na defesa de direitos patrimoniais e pessoais, com foco em soluções
-              eficazes e seguras.
-            </p>
-            <router-link to="/areas/penal" class="link-area">Saiba mais →</router-link>
+            <p>Atuação completa na defesa de direitos patrimoniais e pessoais, com foco em soluções eficazes e seguras.</p>
+            <router-link to="/areas/penal" class="link-area">Saiba mais <span class="seta-pequena">→</span></router-link>
           </div>
 
           <div class="card-area">
             <div class="icone-area">📊</div>
             <h3>Direito Penal</h3>
-            <p>
-              Defesa técnica estratégica em todas as fases da persecução penal, com atuação firme na
-              proteção dos direitos fundamentais.
-            </p>
-            <router-link to="/areas/litigios" class="link-area">Saiba mais →</router-link>
+            <p>Defesa técnica estratégica em todas as fases da persecução penal, com atuação firme na proteção dos direitos fundamentais.</p>
+            <router-link to="/areas/litigios" class="link-area">Saiba mais <span class="seta-pequena">→</span></router-link>
           </div>
 
           <div class="card-area">
             <div class="icone-area">📝</div>
             <h3>Direito Administrativo</h3>
-            <p>Elaboração, revisão e negociação de contratos nacionais e internacionais.</p>
-            <router-link to="/areas/contratual" class="link-area">Saiba mais →</router-link>
+            <p>Elaboração, revisão e negociação de contratos nacionais e internacionais com o setor público.</p>
+            <router-link to="/areas/contratual" class="link-area">Saiba mais <span class="seta-pequena">→</span></router-link>
           </div>
 
           <div class="card-area">
             <div class="icone-area">📈</div>
             <h3>Direito Empresarial</h3>
-            <p>Planejamento tributário preventivo, contencioso administrativo e judicial.</p>
-            <router-link to="/areas/tributario" class="link-area">Saiba mais →</router-link>
+            <p>Planejamento tributário preventivo, contencioso administrativo e judicial para corporações.</p>
+            <router-link to="/areas/tributario" class="link-area">Saiba mais <span class="seta-pequena">→</span></router-link>
           </div>
 
           <div class="card-area">
             <div class="icone-area">🏢</div>
             <h3>Direito do Trabalho</h3>
-            <p>Estruturação de empresas, governança corporativa e compliance.</p>
-            <router-link to="/areas/societario" class="link-area">Saiba mais →</router-link>
+            <p>Estruturação de empresas, governança corporativa, passivos trabalhistas e compliance.</p>
+            <router-link to="/areas/societario" class="link-area">Saiba mais <span class="seta-pequena">→</span></router-link>
           </div>
 
           <div class="card-area">
             <div class="icone-area">🔒</div>
             <h3>Compliance</h3>
-            <p>Implementação de programas de integridade e due diligence.</p>
-            <router-link to="/areas/compliance" class="link-area">Saiba mais →</router-link>
+            <p>Implementação de programas de integridade, gestão de riscos e due diligence.</p>
+            <router-link to="/areas/compliance" class="link-area">Saiba mais <span class="seta-pequena">→</span></router-link>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sobre o Escritório -->
     <section class="sobre">
       <div class="container">
         <div class="sobre-conteudo">
           <div class="sobre-texto">
-            <span class="tag-secao">O ESCRITÓRIO</span>
+            <span class="tag-secao">O Escritório</span>
             <h2>Excelência e tradição no direito empresarial</h2>
+            <div class="linha-decorativa esquerda"></div>
             <p>
               Com mais de 15 anos de atuação, o escritório Jorge Luis Ferreira dos Santos se destaca
               pela abordagem objetiva, moderna e eficaz na solução de conflitos empresariais. Nossa
@@ -123,85 +117,73 @@
           </div>
           <div class="sobre-imagem">
             <div class="placeholder-imagem">
-              <!-- Espaço para foto do escritório ou equipe -->
-            </div>
+              <div class="imagem-overlay"></div>
+              </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Diferenciais -->
     <section class="diferenciais">
       <div class="container">
         <div class="cabecalho-secao">
-          <span class="tag-secao">DIFERENCIAIS</span>
+          <span class="tag-secao">Diferenciais</span>
           <h2>Por que nos escolher</h2>
+          <div class="linha-decorativa"></div>
         </div>
 
         <div class="grade-diferenciais">
           <div class="card-diferencial">
             <div class="icone-diferencial">🎯</div>
             <h3>Estratégia Personalizada</h3>
-            <p>
-              Cada caso é único e merece uma estratégia sob medida, desenvolvida especialmente para
-              suas necessidades.
-            </p>
+            <p>Cada caso é único e merece uma estratégia sob medida, desenvolvida especialmente para suas necessidades.</p>
           </div>
 
           <div class="card-diferencial">
             <div class="icone-diferencial">⚡</div>
             <h3>Agilidade e Eficiência</h3>
-            <p>
-              Processos otimizados e equipe dedicada para garantir respostas rápidas e soluções
-              eficazes.
-            </p>
+            <p>Processos otimizados e equipe dedicada para garantir respostas rápidas e soluções eficazes.</p>
           </div>
 
           <div class="card-diferencial">
             <div class="icone-diferencial">🔒</div>
             <h3>Sigilo e Discrição</h3>
-            <p>
-              Compromisso absoluto com a confidencialidade e a proteção das informações de nossos
-              clientes.
-            </p>
+            <p>Compromisso absoluto com a confidencialidade e a proteção das informações de nossos clientes.</p>
           </div>
 
           <div class="card-diferencial">
             <div class="icone-diferencial">🌐</div>
             <h3>Atuação Nacional</h3>
-            <p>
-              Presença em todo o território brasileiro, com parceiros estratégicos nos principais
-              estados.
-            </p>
+            <p>Presença em todo o território brasileiro, com parceiros estratégicos nos principais estados.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Final -->
     <section class="cta-final">
-      <div class="container">
+      <div class="cta-overlay"></div>
+      <div class="container relative">
         <div class="cta-conteudo">
           <h2>Pronto para resolver seu caso?</h2>
-          <p>Entre em contato e agende uma consulta inicial com nossa equipe.</p>
-          <router-link to="/contato" class="botao-cta"> FALE COM UM ESPECIALISTA </router-link>
+          <p>Entre em contato e agende uma consulta inicial com nossa equipe de especialistas.</p>
+          <router-link to="/contato" class="botao-cta">
+            Fale com um especialista
+          </router-link>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="rodape">
       <div class="container">
         <div class="rodape-grade">
           <div class="rodape-info">
-            <h4>JORGE LUIS FERREIRA DOS SANTOS</h4>
-            <p>Acessoria e consultoria juridica</p>
-            <p class="rodape-contato">📞 (62) 98158 - 6468</p>
-            <p class="rodape-contato">✉️ contato@jorgeluis.adv.br</p>
-            <p class="rodape-endereco">
-              Av. T-4, 619 - Setor Bueno<br />
-              Goiânia - GO, 74230-035
-            </p>
+            <h4>Jorge Luis Ferreira dos Santos</h4>
+            <p class="subtitulo-rodape">Assessoria e consultoria jurídica</p>
+            <div class="contato-lista">
+              <p><span>Telefone:</span> (62) 98158 - 6468</p>
+              <p><span>E-mail:</span> contato@jorgeluis.adv.br</p>
+              <p><span>Endereço:</span> Av. T-4, 619 - Setor Bueno<br />Goiânia - GO, 74230-035</p>
+            </div>
           </div>
 
           <div class="rodape-links">
@@ -218,7 +200,7 @@
           <div class="rodape-redes">
             <h4>Redes sociais</h4>
             <div class="icones-redes">
-              <a href="#" class="icone-rede" aria-label="n">in</a>
+              <a href="#" class="icone-rede" aria-label="LinkedIn">in</a>
               <a href="#" class="icone-rede" aria-label="Instagram">ig</a>
               <a href="#" class="icone-rede" aria-label="Facebook">fb</a>
             </div>
@@ -245,34 +227,50 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ===== VARIÁVEIS PREMIUM ===== */
+* {
+  box-sizing: border-box;
+}
+
 .pagina-inicial {
-  background: #0a0a0a;
-  color: #ffffff;
-  font-family:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
+  --cor-fundo: #030303;
+  --cor-superficie: #0a0a0a;
+  --cor-superficie-hover: #121212;
+  --cor-dourado: #4F8EF7;                /* Azul safira vibrante */
+  --cor-dourado-escuro: #1A3FAA;         /* Azul marinho profundo */
+  --cor-dourado-claro: #93C5FD;          /* Azul celeste claro */
+  --cor-gradiente: linear-gradient(135deg, #1A3FAA 0%, #4F8EF7 55%, #93C5FD 100%);
+  --cor-texto-principal: #F4F4F4;
+  --cor-texto-secundario: #A3A3A3;
+  --cor-borda: rgba(79, 142, 247, 0.18);
+  --fonte-titulo: 'Playfair Display', serif;
+  --fonte-texto: 'Inter', sans-serif;
+
+  background: var(--cor-fundo);
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-texto);
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   background:
-    linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(10, 10, 10, 0.8)),
+    linear-gradient(135deg, rgba(3, 3, 3, 0.95) 0%, rgba(3, 3, 3, 0.7) 100%),
     url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')
       center/cover fixed;
-  padding: 80px 0;
+  padding: 120px 0;
 }
 
 .hero-overlay {
@@ -281,49 +279,54 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-  z-index: 1;
+  background: radial-gradient(circle at 50% 50%, rgba(79, 142, 247, 0.1) 0%, transparent 60%);
+  pointer-events: none;
 }
 
-.hero .container {
+.hero-conteudo {
+  max-width: 800px;
   position: relative;
   z-index: 2;
 }
 
-.hero-conteudo {
-  max-width: 700px;
-}
-
 .hero-tagline {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #d4af37;
-  margin-bottom: 20px;
+  letter-spacing: 0.25em;
+  color: var(--cor-dourado);
+  margin-bottom: 30px;
   font-weight: 500;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid var(--cor-dourado);
+  padding-left: 16px;
 }
 
 .hero-titulo {
-  font-size: 3.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 25px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: var(--fonte-titulo);
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
 }
 
 .texto-dourado {
-  color: #d4af37;
+  background: var(--cor-gradiente);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
   font-weight: 500;
 }
 
 .hero-descricao {
-  font-size: 1.2rem;
-  color: #e0e0e0;
-  margin-bottom: 35px;
+  font-size: 1.15rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 50px;
   max-width: 600px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.8;
+  font-weight: 300;
 }
 
 .hero-botoes {
@@ -333,100 +336,116 @@ export default {
 }
 
 .botao-primario {
-  padding: 15px 35px;
-  background: #d4af37;
+  padding: 18px 42px;
+  background: var(--cor-gradiente);
   border: none;
-  color: #0a0a0a;
-  font-size: 0.95rem;
+  color: #fff;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
-  border-radius: 4px;
-  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px -10px rgba(79, 142, 247, 0.55);
 }
 
 .botao-primario:hover {
-  background: #e5c05c;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px -10px rgba(79, 142, 247, 0.75);
+  background: linear-gradient(135deg, #7BB8F8, #2979D9);
 }
 
 .botao-secundario {
-  padding: 15px 35px;
+  padding: 18px 42px;
   background: transparent;
-  border: 2px solid #d4af37;
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-principal);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   text-decoration: none;
-  border-radius: 4px;
+  text-transform: uppercase;
 }
 
 .botao-secundario:hover {
-  background: rgba(212, 175, 55, 0.1);
-  transform: translateY(-2px);
-  border-color: #e5c05c;
+  border-color: var(--cor-dourado);
+  background: rgba(79, 142, 247, 0.08);
+  color: var(--cor-dourado-claro);
 }
 
 .seta {
-  font-size: 1.2rem;
-  transition: transform 0.2s;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
 }
 
 .botao-primario:hover .seta {
   transform: translateX(5px);
 }
 
-/* ===== SEÇÕES ===== */
+/* ===== SEÇÕES GERAIS ===== */
 .areas,
 .sobre,
 .diferenciais {
-  padding: 100px 0;
+  padding: 140px 0;
 }
 
 .areas {
-  background: #0f0f0f;
+  background: var(--cor-fundo);
 }
 
 .diferenciais {
-  background: #0f0f0f;
+  background: var(--cor-superficie);
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
 }
 
 .cabecalho-secao {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .tag-secao {
-  color: #d4af37;
-  font-size: 0.9rem;
+  color: var(--cor-dourado);
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-weight: 500;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .cabecalho-secao h2 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: #ffffff;
-  margin-bottom: 15px;
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--cor-texto-principal);
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.linha-decorativa {
+  width: 60px;
+  height: 1px;
+  background: var(--cor-gradiente);
+  margin: 0 auto 24px auto;
+}
+
+.linha-decorativa.esquerda {
+  margin: 0 0 30px 0;
 }
 
 .cabecalho-secao p {
-  color: #b0b0b0;
-  font-size: 1.1rem;
+  color: var(--cor-texto-secundario);
+  font-size: 1.15rem;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 300;
 }
 
 /* ===== ÁREAS ===== */
@@ -437,84 +456,113 @@ export default {
 }
 
 .card-area {
-  background: rgba(20, 20, 20, 0.7);
-  backdrop-filter: blur(10px);
-  padding: 40px 30px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  background: var(--cor-superficie);
+  padding: 50px 40px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-area::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--cor-gradiente);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.card-area:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .card-area:hover {
-  transform: translateY(-5px);
-  border-color: rgba(212, 175, 55, 0.3);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
-  background: rgba(30, 30, 30, 0.8);
+  transform: translateY(-8px);
+  background: var(--cor-superficie-hover);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8);
 }
 
 .icone-area {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #d4af37;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
 }
 
 .card-area h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #ffffff;
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 18px;
+  color: var(--cor-texto-principal);
 }
 
 .card-area p {
-  color: #b0b0b0;
-  margin-bottom: 25px;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 35px;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 .link-area {
-  color: #d4af37;
+  color: var(--cor-dourado);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  transition: all 0.2s;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
   display: inline-flex;
   align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
 }
 
 .link-area:hover {
-  color: #e5c05c;
-  transform: translateX(5px);
+  color: var(--cor-dourado-claro);
+  gap: 14px;
+}
+
+.seta-pequena {
+  transition: transform 0.3s;
 }
 
 /* ===== SOBRE ===== */
 .sobre-conteudo {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
   align-items: center;
 }
 
 .sobre-texto h2 {
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 1.3;
-  margin-bottom: 25px;
-  color: #ffffff;
+  font-family: var(--fonte-titulo);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--cor-texto-principal);
 }
 
 .sobre-texto p {
-  color: #b0b0b0;
-  font-size: 1.1rem;
+  color: var(--cor-texto-secundario);
+  font-size: 1.05rem;
   line-height: 1.8;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+  font-weight: 300;
 }
 
 .sobre-estatisticas {
   display: flex;
   gap: 50px;
-  margin-bottom: 40px;
+  margin: 50px 0;
+  padding-top: 40px;
+  border-top: 1px solid var(--cor-borda);
 }
 
 .estatistica {
@@ -523,338 +571,358 @@ export default {
 }
 
 .numero {
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: #d4af37;
-  line-height: 1.2;
+  font-family: var(--fonte-titulo);
+  font-size: 3rem;
+  font-weight: 400;
+  background: var(--cor-gradiente);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 12px;
 }
 
 .rotulo {
-  font-size: 0.9rem;
-  color: #b0b0b0;
+  font-size: 0.75rem;
+  color: var(--cor-texto-secundario);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
 }
 
 .botao-sobre {
   display: inline-block;
-  padding: 12px 30px;
+  padding: 16px 36px;
   background: transparent;
-  border: 2px solid #d4af37;
-  color: #ffffff;
+  border: 1px solid var(--cor-dourado);
+  color: var(--cor-dourado);
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: all 0.3s;
-  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .botao-sobre:hover {
-  background: #d4af37;
-  color: #0a0a0a;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+  background: var(--cor-gradiente);
+  border-color: transparent;
+  color: #fff;
 }
 
 .sobre-imagem {
-  background: #1a1a1a;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  height: 100%;
+  min-height: 600px;
 }
 
 .placeholder-imagem {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 450px;
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-  position: relative;
-  overflow: hidden;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1505664177922-9860b7eb5fb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;
+  border: 1px solid var(--cor-borda);
+  filter: grayscale(30%);
 }
 
-.placeholder-imagem::after {
-  content: 'ESCRITÓRIO';
+.imagem-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(212, 175, 55, 0.1);
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 5px;
-  white-space: nowrap;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, var(--cor-fundo) 0%, transparent 100%);
 }
 
 /* ===== DIFERENCIAIS ===== */
 .grade-diferenciais {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 
 .card-diferencial {
-  text-align: center;
-  padding: 30px;
-  background: rgba(20, 20, 20, 0.5);
-  border-radius: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
   transition: all 0.3s ease;
-  border: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.card-diferencial:hover {
-  transform: translateY(-5px);
-  border-color: rgba(212, 175, 55, 0.3);
 }
 
 .icone-diferencial {
-  font-size: 2.5rem;
-  color: #d4af37;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 24px;
 }
 
 .card-diferencial h3 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #ffffff;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: var(--cor-texto-principal);
+  font-weight: 400;
 }
 
 .card-diferencial p {
-  color: #b0b0b0;
+  color: var(--cor-texto-secundario);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 /* ===== CTA FINAL ===== */
 .cta-final {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-  border-top: 1px solid rgba(212, 175, 55, 0.1);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  position: relative;
+  padding: 120px 0;
+  background: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80') center/cover fixed;
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 3, 3, 0.92);
+}
+
+.relative {
+  position: relative;
+  z-index: 2;
 }
 
 .cta-conteudo {
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 .cta-conteudo h2 {
-  font-size: 2.2rem;
-  font-weight: 300;
-  margin-bottom: 15px;
-  color: #ffffff;
+  font-family: var(--fonte-titulo);
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--cor-texto-principal);
 }
 
 .cta-conteudo p {
-  color: #b0b0b0;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  color: var(--cor-texto-secundario);
+  font-size: 1.15rem;
+  margin-bottom: 45px;
+  font-weight: 300;
 }
 
 .botao-cta {
   display: inline-block;
-  padding: 15px 40px;
-  background: #d4af37;
-  color: #0a0a0a;
+  padding: 20px 48px;
+  background: var(--cor-gradiente);
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  transition: all 0.3s;
-  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+  letter-spacing: 0.1em;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .botao-cta:hover {
-  background: #e5c05c;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #7BB8F8, #2979D9);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px -10px rgba(79, 142, 247, 0.55);
 }
 
 /* ===== RODAPÉ ===== */
 .rodape {
-  background: #050505;
-  padding: 60px 0 20px;
+  background: #000000;
+  padding: 100px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .rodape-grade {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 60px;
+  margin-bottom: 80px;
 }
 
 .rodape-info h4 {
-  color: #ffffff;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  font-weight: 500;
-  letter-spacing: 1px;
+  background: var(--cor-gradiente);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  font-weight: 400;
 }
 
-.rodape-info p {
-  color: #999;
-  margin-bottom: 10px;
+.subtitulo-rodape {
+  color: var(--cor-texto-secundario);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+}
+
+.contato-lista p {
+  color: var(--cor-texto-principal);
+  margin-bottom: 16px;
   font-size: 0.95rem;
-}
-
-.rodape-contato {
-  color: #d4af37 !important;
-  font-weight: 500;
-}
-
-.rodape-endereco {
-  margin-top: 15px;
   line-height: 1.6;
+  font-weight: 300;
+}
+
+.contato-lista span {
+  color: var(--cor-dourado);
+  font-weight: 500;
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
 }
 
 .rodape-links h4,
 .rodape-redes h4 {
-  color: #ffffff;
-  font-size: 1rem;
-  margin-bottom: 20px;
+  color: var(--cor-texto-principal);
+  font-size: 0.85rem;
+  margin-bottom: 30px;
   font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .rodape-links ul {
   list-style: none;
+  padding: 0;
 }
 
 .rodape-links li {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .rodape-links a {
-  color: #999;
+  color: var(--cor-texto-secundario);
   text-decoration: none;
   font-size: 0.95rem;
-  transition: color 0.2s;
+  transition: color 0.3s;
+  font-weight: 300;
 }
 
 .rodape-links a:hover {
-  color: #d4af37;
+  color: var(--cor-dourado-claro);
 }
 
 .icones-redes {
   display: flex;
-  gap: 15px;
+  gap: 16px;
 }
 
 .icone-rede {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: #1a1a1a;
-  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  color: var(--cor-texto-principal);
   text-decoration: none;
-  border-radius: 50%;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.2s;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  font-size: 0.85rem;
+  font-weight: 400;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
 }
 
 .icone-rede:hover {
-  background: #d4af37;
-  color: #0a0a0a;
-  transform: translateY(-2px);
-  border-color: #d4af37;
+  background: var(--cor-gradiente);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-4px);
 }
 
 .rodape-bottom {
   text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid #1a1a1a;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .rodape-bottom p {
-  color: #666;
-  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+  font-size: 0.85rem;
+  font-weight: 300;
 }
 
 /* ===== RESPONSIVIDADE ===== */
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
   .hero-titulo {
-    font-size: 2.5rem;
+    font-size: 3.8rem;
   }
-
-  .grade-areas {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sobre-conteudo {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
+  .grade-areas,
   .grade-diferenciais {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .rodape-grade {
-    grid-template-columns: 1fr 1fr;
+  .sobre-conteudo {
+    gap: 50px;
+  }
+  .placeholder-imagem {
+    min-height: 500px;
   }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
   .hero {
-    padding: 60px 0;
-    text-align: center;
+    text-align: left;
+    min-height: auto;
+    padding: 160px 0 100px;
   }
-
-  .hero-conteudo {
-    margin: 0 auto;
-  }
-
   .hero-titulo {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
-
-  .hero-descricao {
-    font-size: 1rem;
+  .cabecalho-secao h2 {
+    font-size: 2.4rem;
   }
-
-  .hero-botoes {
-    justify-content: center;
-  }
-
   .grade-areas {
     grid-template-columns: 1fr;
   }
-
-  .sobre-estatisticas {
-    flex-direction: column;
-    gap: 20px;
+  .sobre-conteudo {
+    grid-template-columns: 1fr;
   }
-
+  .sobre-imagem {
+    order: -1;
+    min-height: 400px;
+  }
   .grade-diferenciais {
     grid-template-columns: 1fr;
+    gap: 50px;
   }
-
   .rodape-grade {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 50px;
   }
-
-  .placeholder-imagem {
-    height: 300px;
+  .sobre-estatisticas {
+    flex-direction: column;
+    gap: 30px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-titulo {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
-
   .hero-botoes {
     flex-direction: column;
-    width: 100%;
   }
-
   .botao-primario,
   .botao-secundario {
     width: 100%;
     justify-content: center;
+  }
+  .card-area {
+    padding: 40px 24px;
   }
 }
 </style>

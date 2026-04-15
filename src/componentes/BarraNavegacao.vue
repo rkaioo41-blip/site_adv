@@ -9,8 +9,6 @@
           <h2>FERREIRA DOS SANTOS</h2>
         </div>
       </div>
-
-      <!-- Navegação separada em nova linha -->
     </div>
 
     <!-- Barra de navegação inferior -->
@@ -61,13 +59,21 @@ export default {
   box-sizing: border-box;
 }
 
+/* ===== VARIÁVEIS ===== */
+:root {
+  --cor-azul: #4F8EF7;
+  --cor-azul-escuro: #1A3FAA;
+  --cor-azul-claro: #93C5FD;
+  --cor-gradiente: linear-gradient(135deg, #1A3FAA 0%, #4F8EF7 55%, #93C5FD 100%);
+}
+
 .cabecalho {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(79, 142, 247, 0.18);
 }
 
 .container {
@@ -75,10 +81,10 @@ export default {
   margin: 0 auto;
   padding: 20px 40px;
   display: flex;
-  justify-content: flex-start; /* Alinhado à esquerda */
+  justify-content: flex-start;
 }
 
-/* Logo Area - MAIOR e separada */
+/* Logo Area */
 .area-logo {
   display: flex;
   align-items: center;
@@ -86,19 +92,19 @@ export default {
 }
 
 .logo {
-  width: 90px; /* Aumentado de 55px para 90px */
-  height: 90px; /* Aumentado de 55px para 90px */
-  border-radius: 0; /* Sem arredondamento - quadrada */
+  width: 90px;
+  height: 90px;
+  border-radius: 0;
   object-fit: cover;
   border: 2px solid #000000;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 20px rgba(79, 142, 247, 0.3);
   transition: all 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-  border-color: #e5c05c;
+  box-shadow: 0 0 30px rgba(79, 142, 247, 0.55);
+  border-color: #4F8EF7;
 }
 
 .texto-logo {
@@ -109,7 +115,7 @@ export default {
 
 .texto-logo h1 {
   color: #ffffff;
-  font-size: 1.6rem; /* Aumentado */
+  font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 1px;
   margin: 0;
@@ -118,23 +124,25 @@ export default {
 
 .texto-logo h2 {
   color: #ffffff;
-  font-size: 1.3rem; /* Aumentado */
+  font-size: 1.3rem;
   font-weight: 500;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .texto-logo .advogado {
-  color: #d4af37;
-  font-size: 1rem; /* Aumentado */
+  background: var(--cor-gradiente);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 2px;
   margin-top: 4px;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Container da navegação - separado */
+/* Container da navegação */
 .nav-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -148,7 +156,7 @@ export default {
   justify-content: space-between;
   width: 100%;
   padding-top: 10px;
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-top: 1px solid rgba(79, 142, 247, 0.25);
 }
 
 .menu-nav {
@@ -169,7 +177,7 @@ export default {
   position: relative;
   transition: all 0.2s ease;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  text-transform: uppercase; /* Maiúsculas como na referência */
+  text-transform: uppercase;
 }
 
 .link-nav::after {
@@ -179,13 +187,13 @@ export default {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #d4af37, #f5e6b3, #d4af37);
-  box-shadow: 0 0 10px #d4af37;
-  transition: width 0.2s ease;
+  background: var(--cor-gradiente);
+  box-shadow: 0 0 10px rgba(79, 142, 247, 0.6);
+  transition: width 0.25s ease;
 }
 
 .link-nav:hover {
-  color: #d4af37;
+  color: #93C5FD;
 }
 
 .link-nav:hover::after {
@@ -193,21 +201,21 @@ export default {
 }
 
 .link-nav.ativo {
-  color: #d4af37;
+  color: #4F8EF7;
   font-weight: 600;
 }
 
 .link-nav.ativo::after {
   width: 100%;
-  background: linear-gradient(90deg, #d4af37, #f5e6b3, #d4af37);
-  box-shadow: 0 0 10px #d4af37;
+  background: var(--cor-gradiente);
+  box-shadow: 0 0 10px rgba(79, 142, 247, 0.6);
 }
 
-/* Botão de contato - estilo mais próximo da referência */
+/* Botão de contato */
 .botao-contato {
   background: transparent;
-  border: 2px solid #d4af37;
-  color: #d4af37;
+  border: 2px solid #4F8EF7;
+  color: #4F8EF7;
   padding: 10px 25px;
   border-radius: 4px;
   font-size: 0.95rem;
@@ -219,16 +227,16 @@ export default {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-  text-transform: uppercase; /* Maiúsculas como na referência */
+  box-shadow: 0 0 15px rgba(79, 142, 247, 0.2);
+  text-transform: uppercase;
 }
 
 .botao-contato:hover {
-  background: #d4af37;
-  color: #0a0a0a;
+  background: var(--cor-gradiente);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 5px 25px rgba(212, 175, 55, 0.5);
-  border-color: #e5c05c;
+  box-shadow: 0 5px 25px rgba(79, 142, 247, 0.5);
+  border-color: transparent;
 }
 
 .icone-whatsapp {
@@ -245,12 +253,12 @@ export default {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 175, 55, 0.3),
-    #d4af37,
-    rgba(212, 175, 55, 0.3),
+    rgba(79, 142, 247, 0.3),
+    #4F8EF7,
+    rgba(79, 142, 247, 0.3),
     transparent
   );
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 15px rgba(79, 142, 247, 0.4);
   opacity: 0.9;
 }
 
@@ -283,7 +291,7 @@ export default {
 
 @media (max-width: 480px) {
   .logo {
-    width: 70px; /* Reduzido para mobile mas ainda maior que original */
+    width: 70px;
     height: 70px;
   }
 
