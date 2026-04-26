@@ -6,7 +6,7 @@
       <div class="container">
         <header class="cabecalho-pagina">
           <h1>Contato</h1>
-          <p>Entre em contato através de nossas redes sociais ou envie uma mensagem</p>
+          <p>Entre em contato através das nossas redes sociais ou envie uma mensagem</p>
         </header>
 
         <section class="grade-cards" aria-label="Nossos canais de contato">
@@ -374,25 +374,21 @@ export default {
 
 <style scoped>
 /* =========================================
-   VARIÁVEIS GLOBAIS E RESET BÁSICO
+   VARIÁVEIS GLOBAIS - CINZA E AMARELO (padronizado com Areas.vue)
    ========================================= */
 .pagina-contato {
-  --cor-primaria: #4F8EF7;
-  --cor-primaria-hover: #93C5FD;
-  --cor-azul-escuro: #1A3FAA;
-  --cor-gradiente: linear-gradient(135deg, #1A3FAA 0%, #4F8EF7 55%, #93C5FD 100%);
-  --cor-bg-principal: #0a0a0a;
-  --cor-bg-secundario: #1a1a1a;
-  --cor-bg-terciario: #0f0f0f;
-  --cor-texto-claro: #ffffff;
-  --cor-texto-mutado: #b0b0b0;
-  --cor-borda: rgba(79, 142, 247, 0.22);
-  --cor-borda-fina: rgba(79, 142, 247, 0.12);
-  --sombra-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --bg: #080808;
+  --bg2: #0f0f0f;
+  --texto: #e8e6e1;
+  --sub: #888;
+  --borda: rgba(255, 255, 255, 0.08);
+  --accent: #b09060;      /* amarelo/dourado */
+  --accent-hover: #c9a86b;
 
-  background: var(--cor-bg-principal);
+  background: var(--bg);
+  color: var(--texto);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .conteudo {
@@ -406,7 +402,7 @@ export default {
 }
 
 /* =========================================
-   CABEÇALHO
+   CABEÇALHO DA PÁGINA
    ========================================= */
 .cabecalho-pagina {
   text-align: center;
@@ -414,19 +410,19 @@ export default {
 }
 
 .cabecalho-pagina h1 {
-  color: var(--cor-texto-claro);
+  color: var(--texto);
   font-size: 2.5rem;
   font-weight: 300;
   margin-bottom: 15px;
 }
 
 .cabecalho-pagina p {
-  color: var(--cor-texto-mutado);
+  color: var(--sub);
   font-size: 1.1rem;
 }
 
 /* =========================================
-   CARDS DE CONTATO SOCIAIS
+   CARDS DE CONTATO (REDES SOCIAIS)
    ========================================= */
 .grade-cards {
   display: grid;
@@ -436,12 +432,12 @@ export default {
 }
 
 .card-contato {
-  background: linear-gradient(135deg, var(--cor-bg-secundario) 0%, var(--cor-bg-terciario) 100%);
-  border: 1px solid var(--cor-borda-fina);
-  border-radius: 12px;
+  background: var(--bg2);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
   padding: 40px 30px;
   text-decoration: none;
-  color: var(--cor-texto-claro);
+  color: var(--texto);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -457,49 +453,46 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: var(--cor-gradiente);
+  height: 2px;
+  background: var(--accent);
   transform: translateX(-100%);
   transition: transform 0.5s ease;
 }
 
 .card-contato:hover {
   transform: translateY(-5px);
-  box-shadow: var(--sombra-card);
-  border-color: rgba(79, 142, 247, 0.35);
+  border-color: rgba(176, 144, 96, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card-contato:hover::before {
-  transform: translateX(100%);
+  transform: translateX(0);
 }
-
-.card-contato.whatsapp:hover { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.15); }
-.card-contato.instagram:hover { box-shadow: 0 10px 30px rgba(225, 48, 108, 0.15); }
-.card-contato.linkedin:hover { box-shadow: 0 10px 30px rgba(79, 142, 247, 0.2); }
 
 .icone-card {
   margin-bottom: 25px;
-  color: var(--cor-primaria);
+  color: var(--accent);
   transition: transform 0.3s ease;
 }
 
 .card-contato:hover .icone-card {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .card-contato h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .card-contato p {
-  color: var(--cor-texto-mutado);
+  color: var(--sub);
   margin-bottom: 15px;
   font-size: 0.95rem;
 }
 
 .info-card {
-  color: var(--cor-primaria);
+  color: var(--accent);
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 20px;
@@ -509,14 +502,14 @@ export default {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--cor-primaria);
+  color: var(--accent);
   font-weight: 500;
   margin-top: auto;
   transition: color 0.3s ease;
 }
 
 .card-contato:hover .acao-card {
-  color: var(--cor-texto-claro);
+  color: var(--texto);
 }
 
 /* =========================================
@@ -528,9 +521,9 @@ export default {
   gap: 30px;
   margin-bottom: 60px;
   padding: 40px;
-  background: linear-gradient(135deg, var(--cor-bg-secundario) 0%, var(--cor-bg-terciario) 100%);
-  border-radius: 12px;
-  border: 1px solid var(--cor-borda-fina);
+  background: var(--bg2);
+  border-radius: 4px;
+  border: 1px solid var(--borda);
 }
 
 .item-info {
@@ -538,38 +531,39 @@ export default {
 }
 
 .item-info h4 {
-  color: var(--cor-primaria);
+  color: var(--accent);
   font-size: 1.1rem;
   margin-bottom: 15px;
+  font-weight: 500;
 }
 
 .item-info p, .item-info address {
-  color: var(--cor-texto-mutado);
+  color: var(--sub);
   line-height: 1.6;
   font-style: normal;
 }
 
 .link-texto {
-  color: var(--cor-texto-mutado);
+  color: var(--sub);
   text-decoration: none;
   transition: color 0.3s;
 }
 .link-texto:hover {
-  color: var(--cor-primaria);
+  color: var(--accent);
 }
 
 /* =========================================
    FORMULÁRIO DE CONTATO
    ========================================= */
 .container-formulario {
-  background: linear-gradient(135deg, var(--cor-bg-secundario) 0%, var(--cor-bg-terciario) 100%);
-  border-radius: 12px;
+  background: var(--bg2);
+  border-radius: 4px;
   padding: 50px;
-  border: 1px solid var(--cor-borda-fina);
+  border: 1px solid var(--borda);
 }
 
 .container-formulario h3 {
-  color: var(--cor-texto-claro);
+  color: var(--texto);
   font-size: 1.8rem;
   font-weight: 300;
   text-align: center;
@@ -594,10 +588,11 @@ export default {
 
 .grupo-form label {
   display: block;
-  color: var(--cor-primaria);
+  color: var(--accent);
   margin-bottom: 8px;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
 .grupo-form input,
@@ -605,42 +600,40 @@ export default {
 .grupo-form select {
   width: 100%;
   padding: 12px 15px;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--cor-borda);
-  border-radius: 6px;
-  color: var(--cor-texto-claro);
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--borda);
+  border-radius: 2px;
+  color: var(--texto);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
 }
 
 .grupo-form input:focus,
 .grupo-form textarea:focus,
 .grupo-form select:focus {
   outline: none;
-  border-color: var(--cor-primaria);
-  box-shadow: 0 0 12px rgba(79, 142, 247, 0.25);
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(176, 144, 96, 0.2);
 }
 
 .grupo-form input:disabled,
 .grupo-form textarea:disabled,
 .grupo-form select:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 .grupo-form input::placeholder,
 .grupo-form textarea::placeholder {
-  color: #666;
+  color: #555;
 }
 
 .grupo-form select option {
-  background: var(--cor-bg-secundario);
-  color: var(--cor-texto-claro);
+  background: var(--bg2);
+  color: var(--texto);
 }
 
-/* =========================================
-   CHECKBOX E BOTÃO DE ENVIO
-   ========================================= */
+/* CHECKBOX LGPD */
 .lgpd {
   margin: 20px 0;
 }
@@ -656,38 +649,40 @@ export default {
   width: auto;
   margin-top: 3px;
   cursor: pointer;
-  accent-color: var(--cor-primaria);
+  accent-color: var(--accent);
 }
 
 .checkbox-label span {
-  color: var(--cor-texto-mutado);
-  font-size: 0.9rem;
+  color: var(--sub);
+  font-size: 0.85rem;
   line-height: 1.4;
 }
 
 .checkbox-label a {
-  color: var(--cor-primaria);
+  color: var(--accent);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s;
 }
 
 .checkbox-label a:hover {
-  color: var(--cor-primaria-hover);
+  color: var(--accent-hover);
   text-decoration: underline;
 }
 
+/* BOTÃO ENVIAR */
 .botao-enviar {
   width: 100%;
-  padding: 15px 30px;
-  background: var(--cor-gradiente);
+  padding: 14px 30px;
+  background: var(--accent);
   border: none;
-  border-radius: 6px;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  border-radius: 2px;
+  color: #080808;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -695,9 +690,8 @@ export default {
 }
 
 .botao-enviar:hover:not(:disabled) {
-  background: linear-gradient(135deg, #4F8EF7 0%, #93C5FD 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(79, 142, 247, 0.4);
+  background: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 .botao-enviar:disabled {
@@ -706,42 +700,40 @@ export default {
   transform: none;
 }
 
-/* =========================================
-   FEEDBACKS (Sucesso e Erro) e ANIMAÇÕES
-   ========================================= */
+/* FEEDBACKS (sucesso/erro) */
 .feedback {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 18px 20px;
+  border-radius: 4px;
   margin-bottom: 30px;
 }
 
 .feedback.sucesso {
-  background: rgba(76, 175, 80, 0.1);
-  border: 1px solid #4caf50;
-  border-left: 4px solid #4caf50;
-  color: #4caf50;
+  background: rgba(176, 144, 96, 0.08);
+  border: 1px solid var(--accent);
+  border-left: 3px solid var(--accent);
+  color: var(--accent);
 }
 
 .feedback.erro {
-  background: rgba(244, 67, 54, 0.1);
-  border: 1px solid #f44336;
-  border-left: 4px solid #f44336;
-  color: #f44336;
+  background: rgba(255, 70, 70, 0.08);
+  border: 1px solid #e5484d;
+  border-left: 3px solid #e5484d;
+  color: #e5484d;
 }
 
 .feedback svg { flex-shrink: 0; }
-.feedback strong { display: block; margin-bottom: 5px; font-size: 1rem; }
-.feedback p { margin: 0; font-size: 0.9rem; line-height: 1.4; }
+.feedback strong { display: block; margin-bottom: 5px; font-size: 0.9rem; }
+.feedback p { margin: 0; font-size: 0.85rem; line-height: 1.4; }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .spinner-container {
@@ -750,35 +742,34 @@ export default {
   gap: 8px;
 }
 .spinner {
-  border: 2px solid rgba(255,255,255,0.2);
-  border-left-color: #ffffff;
+  border: 2px solid rgba(8, 8, 8, 0.2);
+  border-left-color: #080808;
   border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  animation: spin 1s linear infinite;
+  width: 14px;
+  height: 14px;
+  animation: spin 0.8s linear infinite;
 }
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-/* =========================================
-   MODAL DE POLÍTICA DE PRIVACIDADE
-   ========================================= */
+/* MODAL DE POLÍTICA DE PRIVACIDADE */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(8, 8, 8, 0.92);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  backdrop-filter: blur(4px);
+  padding: 24px;
 }
 
 .modal-conteudo {
-  background: linear-gradient(135deg, var(--cor-bg-secundario) 0%, var(--cor-bg-terciario) 100%);
-  border: 1px solid rgba(79, 142, 247, 0.3);
-  border-radius: 12px;
+  background: var(--bg2);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
   max-width: 550px;
   width: 90%;
   max-height: 80vh;
@@ -791,78 +782,74 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 20px 25px;
-  border-bottom: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--borda);
 }
 
 .modal-header h3 {
-  color: var(--cor-primaria);
+  color: var(--accent);
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .modal-header .fechar {
   background: none;
   border: none;
-  color: var(--cor-texto-mutado);
+  color: var(--sub);
   font-size: 28px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.2s;
 }
-.modal-header .fechar:hover { color: var(--cor-primaria); }
+.modal-header .fechar:hover { color: var(--accent); }
 
 .modal-body {
   padding: 25px;
   overflow-y: auto;
-  color: var(--cor-texto-mutado);
+  color: var(--sub);
   line-height: 1.6;
+  font-size: 0.9rem;
 }
 
 .modal-body p { margin-bottom: 15px; }
 .modal-body ul { margin: 10px 0 20px 20px; }
-.modal-body li { margin-bottom: 8px; }
-.modal-body a { color: var(--cor-primaria); }
+.modal-body li { margin-bottom: 6px; }
+.modal-body a { color: var(--accent); }
 
 .modal-footer {
   padding: 20px 25px;
-  border-top: 1px solid var(--cor-borda);
+  border-top: 1px solid var(--borda);
   text-align: center;
 }
 
 .botao-fechar {
-  background: var(--cor-gradiente);
-  color: #ffffff;
+  background: var(--accent);
+  color: #080808;
   border: none;
   padding: 10px 30px;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s;
 }
 .botao-fechar:hover {
-  background: linear-gradient(135deg, #4F8EF7 0%, #93C5FD 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(79, 142, 247, 0.4);
+  background: var(--accent-hover);
 }
 
-/* =========================================
-   RESPONSIVIDADE
-   ========================================= */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .cabecalho-pagina h1 { font-size: 2rem; }
-
   .grade-formulario {
     grid-template-columns: 1fr;
     gap: 0;
   }
-
   .container-formulario,
   .info-adicional {
     padding: 30px 20px;
   }
-
   .container-formulario h3 { font-size: 1.5rem; }
-
   .modal-conteudo { width: 95%; margin: 20px; }
 }
 

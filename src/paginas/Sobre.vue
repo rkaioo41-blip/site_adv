@@ -26,20 +26,19 @@
         <div class="container">
           <div class="perfil-grid">
 
-            <!-- Imagem / avatar -->
+            <!-- Foto -->
             <div class="perfil-visual">
               <div class="avatar-wrapper">
-                <div class="avatar-placeholder" aria-hidden="true">
-                  <svg viewBox="0 0 100 100" width="80" height="80">
-                    <circle cx="50" cy="38" r="22" fill="rgba(79,142,247,0.25)" />
-                    <ellipse cx="50" cy="82" rx="32" ry="20" fill="rgba(79,142,247,0.15)" />
-                  </svg>
-                </div>
+                <img
+                  src="@/assets/fotoreal.jpeg"
+                  alt="Jorge Luis Ferreira dos Santos"
+                  class="foto-perfil"
+                />
                 <div class="avatar-glow" aria-hidden="true"></div>
               </div>
               <div class="nome-cargo">
                 <h2>Jorge Luis Ferreira dos Santos</h2>
-                <span class="oab">Advogado</span>
+                <span class="oab-label">Advogado</span>
               </div>
             </div>
 
@@ -297,59 +296,61 @@ export default {
   top: 120px;
 }
 
+/* ===== FOTO REAL ===== */
 .avatar-wrapper {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 280px;
 }
 
-.avatar-placeholder {
+.foto-perfil {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background: var(--bg-3);
-  border: 1px solid var(--borda);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid rgba(79, 142, 247, 0.2);
+  filter: grayscale(10%);
+  transition: filter 0.3s ease;
+}
+
+.foto-perfil:hover {
+  filter: grayscale(0%);
 }
 
 .avatar-glow {
   position: absolute;
-  inset: -12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(79,142,247,0.18) 0%, transparent 70%);
+  inset: -16px;
+  border-radius: 8px;
+  background: radial-gradient(ellipse at center bottom, rgba(79,142,247,0.15) 0%, transparent 70%);
   pointer-events: none;
-  animation: pulso 3s ease-in-out infinite;
+  z-index: -1;
 }
 
-@keyframes pulso {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
-}
-
+/* ===== NOME / CARGO ===== */
 .nome-cargo {
   text-align: center;
 }
 
 .nome-cargo h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 500;
   color: var(--texto);
   margin: 0 0 8px;
   line-height: 1.3;
 }
 
-.oab {
-  font-size: 0.75rem;
+.oab-label {
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--azul);
   font-weight: 500;
 }
 
+/* ===== TEXTO ===== */
 .perfil-texto {
   padding-top: 6px;
 }
@@ -449,9 +450,7 @@ blockquote p {
   transition: background 0.3s ease;
 }
 
-.pilar:hover {
-  background: var(--bg-3);
-}
+.pilar:hover { background: var(--bg-3); }
 
 .pilar-icone {
   color: var(--azul);
@@ -484,7 +483,6 @@ blockquote p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
 }
 
 .stat {
@@ -603,7 +601,11 @@ blockquote p {
     align-items: center;
     gap: 28px;
   }
-  .avatar-wrapper { width: 110px; height: 110px; }
+  .avatar-wrapper {
+    width: 130px;
+    height: 165px;
+    flex-shrink: 0;
+  }
   .nome-cargo { text-align: left; }
   .grid-pilares { grid-template-columns: repeat(2, 1fr); }
 }
@@ -611,13 +613,16 @@ blockquote p {
 @media (max-width: 600px) {
   .hero-sobre { padding: 80px 0 60px; }
   .secao-perfil, .secao-pilares, .secao-cta { padding: 60px 0; }
-  .secao-citacao { padding: 60px 0; }
-  .secao-stats { padding: 60px 0; }
+  .secao-citacao, .secao-stats { padding: 60px 0; }
   .grid-pilares { grid-template-columns: 1fr; }
   .stats-grid { flex-direction: column; gap: 36px; }
   .stat-divider { width: 60px; height: 1px; }
   blockquote { padding: 0 16px; }
-  .perfil-visual { flex-direction: column; }
+  .perfil-visual {
+    flex-direction: column;
+    align-items: center;
+  }
+  .avatar-wrapper { width: 180px; height: 230px; }
   .nome-cargo { text-align: center; }
   .cta-box { padding: 48px 24px; }
 }
