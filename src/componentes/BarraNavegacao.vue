@@ -12,7 +12,6 @@
         <div class="texto-logo">
           <h1>JORGE LUIS</h1>
           <h2>FERREIRA DOS SANTOS</h2>
-          <span class="oab">OAB/GO 77292 • Advogado</span>
         </div>
       </div>
     </div>
@@ -191,13 +190,7 @@ export default {
   font-weight: 500;
 }
 
-.oab {
-  margin-top: 6px;
-  color: var(--prata-2);
-  font-size: 0.76rem;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-}
+
 
 /* =====================================
    NAV
@@ -335,9 +328,7 @@ export default {
     font-size: 0.92rem;
   }
 
-  .oab {
-    font-size: 0.68rem;
-  }
+
 
   .menu-nav {
     flex-direction: column;
@@ -359,8 +350,5 @@ export default {
     font-size: 0.8rem;
   }
 
-  .oab {
-    font-size: 0.62rem;
-  }
 }
 </style>
