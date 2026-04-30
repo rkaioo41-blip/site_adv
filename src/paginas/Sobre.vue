@@ -34,7 +34,6 @@
               </div>
               <div class="nome-cargo">
                 <h2>Jorge Luis Ferreira dos Santos</h2>
-
               </div>
             </div>
 
@@ -175,7 +174,7 @@ export default {
   padding: 0 32px;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero-sobre {
   padding: 110px 0 80px;
   border-bottom: 1px solid var(--borda);
@@ -193,7 +192,7 @@ export default {
 
 .titulo-hero {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
   font-weight: 400;
   color: var(--texto);
   line-height: 1.1;
@@ -212,7 +211,7 @@ export default {
   opacity: 0.6;
 }
 
-/* PERFIL */
+/* ===== PERFIL ===== */
 .secao-perfil {
   padding: 90px 0 80px;
   border-bottom: 1px solid var(--borda);
@@ -278,7 +277,6 @@ export default {
   line-height: 1.3;
 }
 
-
 .perfil-texto {
   padding-top: 6px;
 }
@@ -307,7 +305,7 @@ export default {
   font-weight: 500;
 }
 
-/* CITAÇÃO */
+/* ===== CITAÇÃO ===== */
 .secao-citacao {
   padding: 80px 0;
   background: var(--bg2);
@@ -334,7 +332,7 @@ blockquote {
 
 blockquote p {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
   font-weight: 400;
   font-style: italic;
   color: var(--texto);
@@ -342,7 +340,7 @@ blockquote p {
   margin: 0;
 }
 
-/* PILARES */
+/* ===== PILARES ===== */
 .secao-pilares {
   padding: 90px 0;
   border-bottom: 1px solid var(--borda);
@@ -394,7 +392,7 @@ blockquote p {
   font-weight: 300;
 }
 
-/* CTA */
+/* ===== CTA ===== */
 .secao-cta {
   padding: 90px 0 100px;
 }
@@ -408,7 +406,7 @@ blockquote p {
 
 .cta-box h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
   font-weight: 400;
   color: var(--texto);
   margin-bottom: 14px;
@@ -437,24 +435,153 @@ blockquote p {
 
 .botao-cta:hover { opacity: 0.85; }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .perfil-grid { grid-template-columns: 1fr; gap: 48px; }
-  .perfil-visual { position: static; flex-direction: row; align-items: center; gap: 28px; }
-  .avatar-wrapper { width: 130px; height: 165px; flex-shrink: 0; }
-  .nome-cargo { text-align: left; }
-  .grid-pilares { grid-template-columns: repeat(2, 1fr); }
+/* ===== RESPONSIVIDADE ===== */
+
+/* TABLET */
+@media (max-width: 980px) {
+  .hero-sobre {
+    padding: 90px 0 60px;
+  }
+
+  .secao-perfil {
+    padding: 70px 0 60px;
+  }
+
+  .secao-pilares,
+  .secao-cta {
+    padding: 70px 0;
+  }
+
+  .secao-citacao {
+    padding: 60px 0;
+  }
+
+  .perfil-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Foto ao lado do nome em tablet — layout horizontal */
+  .perfil-visual {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .avatar-wrapper {
+    width: 130px;
+    height: 165px;
+    flex-shrink: 0;
+  }
+
+  .nome-cargo {
+    text-align: left;
+  }
+
+  .grid-pilares {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titulo-secao {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
 }
 
-@media (max-width: 600px) {
-  .hero-sobre { padding: 80px 0 60px; }
-  .secao-perfil, .secao-pilares, .secao-cta { padding: 60px 0; }
-  .secao-citacao { padding: 60px 0; }
-  .grid-pilares { grid-template-columns: 1fr; }
-  blockquote { padding: 0 16px; }
-  .perfil-visual { flex-direction: column; align-items: center; }
-  .avatar-wrapper { width: 180px; height: 230px; }
-  .nome-cargo { text-align: center; }
-  .cta-box { padding: 48px 24px; }
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .hero-sobre {
+    padding: 80px 0 50px;
+  }
+
+  .secao-perfil {
+    padding: 56px 0;
+  }
+
+  .secao-pilares,
+  .secao-cta {
+    padding: 56px 0;
+  }
+
+  .secao-citacao {
+    padding: 50px 0;
+  }
+
+  blockquote {
+    padding: 0 8px;
+  }
+
+  .aspas {
+    font-size: 6rem;
+  }
+
+  .perfil-texto p {
+    font-size: 0.97rem;
+  }
+
+  .paragrafo-destaque {
+    font-size: 1.05rem !important;
+  }
+
+  .cta-box {
+    padding: 48px 28px;
+  }
+
+  .cta-box p {
+    margin-bottom: 28px;
+  }
+}
+
+/* MOBILE PEQUENO */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-sobre {
+    padding: 70px 0 44px;
+  }
+
+  /* Foto empilhada no mobile pequeno */
+  .perfil-visual {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatar-wrapper {
+    width: 160px;
+    height: 200px;
+  }
+
+  .nome-cargo {
+    text-align: center;
+  }
+
+  .grid-pilares {
+    grid-template-columns: 1fr;
+  }
+
+  .pilar {
+    padding: 32px 20px;
+  }
+
+  .cta-box {
+    padding: 40px 20px;
+  }
+
+  .botao-cta {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .secao-cta {
+    padding: 48px 0 56px;
+  }
 }
 </style>

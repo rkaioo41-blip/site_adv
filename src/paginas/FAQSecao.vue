@@ -33,9 +33,13 @@
             v-for="(item, index) in perguntas"
             :key="index"
           >
-            <button class="faq-pergunta" @click="toggle(index)">
+            <button
+              class="faq-pergunta"
+              @click="toggle(index)"
+              :aria-expanded="aberto === index"
+            >
               <span>{{ item.pergunta }}</span>
-              <span class="icone">
+              <span class="icone" aria-hidden="true">
                 {{ aberto === index ? '−' : '+' }}
               </span>
             </button>
@@ -164,6 +168,7 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500;700&display=swap');
 
+/* ===== VARIÁVEIS ===== */
 .pagina-faq {
   --bg: #080808;
   --bg2: #0f0f0f;
@@ -179,27 +184,29 @@ export default {
   font-family: 'DM Sans', sans-serif;
 }
 
-/* container */
+/* ===== CONTAINER ===== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
-/* hero */
+/* ===== HERO ===== */
 .hero-faq {
   position: relative;
   padding: 140px 0 110px;
+  /* background-attachment: scroll — fixed quebra no iOS/Android */
   background:
-    linear-gradient(135deg, rgba(8,8,8,.92), rgba(8,8,8,.82)),
+    linear-gradient(135deg, rgba(8, 8, 8, .92), rgba(8, 8, 8, .82)),
     url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=80')
-    center/cover fixed;
+    center/cover scroll;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(176,144,96,.08), transparent 60%);
+  background: radial-gradient(circle, rgba(176, 144, 96, .08), transparent 60%);
+  pointer-events: none;
 }
 
 .hero-conteudo {
@@ -211,11 +218,12 @@ export default {
 .tag-topo {
   display: inline-block;
   color: var(--accent);
-  font-size: .75rem;
+  font-size: .72rem;
   letter-spacing: .22em;
   margin-bottom: 26px;
   border-left: 2px solid var(--accent);
   padding-left: 14px;
+  font-weight: 500;
 }
 
 .hero-conteudo h1 {
@@ -238,24 +246,26 @@ export default {
   max-width: 650px;
 }
 
-/* faq */
+/* ===== FAQ ===== */
 .secao-faq {
   padding: 100px 0;
 }
 
 .faq-lista {
   display: grid;
-  gap: 18px;
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
 .faq-item {
   background: var(--bg3);
   border: 1px solid var(--borda);
-  transition: .25s ease;
+  transition: border-color .25s ease;
 }
 
 .faq-item:hover {
-  border-color: rgba(176,144,96,.35);
+  border-color: rgba(176, 144, 96, .35);
 }
 
 .faq-pergunta {
@@ -263,39 +273,52 @@ export default {
   background: transparent;
   border: none;
   color: var(--texto);
-  padding: 24px 28px;
+  padding: 22px 28px;
   cursor: pointer;
   text-align: left;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  gap: 16px;
   font-size: 1rem;
   font-weight: 500;
+  font-family: inherit;
+  /* Altura mínima tocável em mobile */
+  min-height: 60px;
+  line-height: 1.4;
+}
+
+.faq-pergunta:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .icone {
   color: var(--accent);
   font-size: 1.4rem;
-  margin-left: 20px;
+  flex-shrink: 0;
+  line-height: 1;
+  /* Evita que o ícone "pule" ao alternar */
+  width: 22px;
+  text-align: center;
 }
 
 .faq-resposta {
-  padding: 0 28px 26px;
+  padding: 0 28px 24px;
   color: var(--texto-mutado);
   line-height: 1.8;
   font-size: .96rem;
 }
 
-/* cta */
+/* ===== CTA FINAL ===== */
 .cta-final {
   position: relative;
   padding: 110px 0;
+  /* background-attachment: scroll — fixed quebra no iOS/Android */
   background:
-    linear-gradient(rgba(8,8,8,.9), rgba(8,8,8,.9)),
+    linear-gradient(rgba(8, 8, 8, .9), rgba(8, 8, 8, .9)),
     url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2000&q=80')
-    center/cover fixed;
+    center/cover scroll;
 }
 
 .relative {
@@ -304,7 +327,7 @@ export default {
 }
 
 .cta-conteudo {
-  max-width: 760px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
@@ -318,12 +341,14 @@ export default {
 
 .cta-conteudo p {
   color: var(--texto-mutado);
-  margin-bottom: 34px;
+  font-size: 1.05rem;
+  margin-bottom: 36px;
+  font-weight: 300;
 }
 
 .botao-cta {
   display: inline-block;
-  padding: 16px 34px;
+  padding: 16px 36px;
   text-decoration: none;
   background: var(--accent);
   color: #080808;
@@ -338,49 +363,144 @@ export default {
   transform: translateY(-2px);
 }
 
-/* animação */
+/* ===== ANIMAÇÃO ===== */
 .fade-enter-active,
 .fade-leave-active {
-  transition: all .22s ease;
+  transition: opacity .22s ease, transform .22s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
-/* responsivo */
-@media (max-width: 768px) {
+/* ===== RESPONSIVIDADE ===== */
+
+/* TABLET */
+@media (max-width: 980px) {
   .container {
-    padding: 0 22px;
+    padding: 0 28px;
   }
 
   .hero-faq {
-    padding: 120px 0 80px;
+    padding: 100px 0 80px;
   }
 
   .hero-conteudo h1 {
+    font-size: 3.2rem;
+  }
+
+  .secao-faq {
+    padding: 72px 0;
+  }
+
+  .cta-final {
+    padding: 80px 0;
+  }
+
+  .cta-conteudo h2 {
     font-size: 2.6rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .hero-faq {
+    padding: 88px 0 64px;
+  }
+
+  .hero-conteudo h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-conteudo p {
+    font-size: 0.97rem;
+  }
+
+  .secao-faq {
+    padding: 56px 0;
+  }
+
+  .faq-pergunta {
+    padding: 18px 20px;
+    font-size: .94rem;
+  }
+
+  .faq-resposta {
+    padding: 0 20px 20px;
+    font-size: .92rem;
+  }
+
+  .cta-final {
+    padding: 64px 0;
   }
 
   .cta-conteudo h2 {
     font-size: 2.2rem;
   }
 
-  .faq-pergunta {
-    padding: 20px;
-    font-size: .95rem;
-  }
-
-  .faq-resposta {
-    padding: 0 20px 20px;
+  .cta-conteudo p {
+    font-size: 0.97rem;
+    margin-bottom: 28px;
   }
 }
 
+/* MOBILE PEQUENO */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-faq {
+    padding: 78px 0 56px;
+  }
+
+  .tag-topo {
+    font-size: .62rem;
+    letter-spacing: .16em;
+  }
+
   .hero-conteudo h1 {
-    font-size: 2.15rem;
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .hero-conteudo p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .secao-faq {
+    padding: 48px 0;
+  }
+
+  .faq-pergunta {
+    padding: 16px;
+    font-size: .9rem;
+    min-height: 54px;
+  }
+
+  .faq-resposta {
+    padding: 0 16px 18px;
+  }
+
+  .cta-final {
+    padding: 56px 0;
+  }
+
+  .cta-conteudo h2 {
+    font-size: 1.85rem;
+  }
+
+  .botao-cta {
+    width: 100%;
+    text-align: center;
+    padding: 15px 20px;
   }
 }
 </style>

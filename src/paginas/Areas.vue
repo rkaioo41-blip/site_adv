@@ -37,13 +37,13 @@
     <transition name="fade">
       <div v-if="modalAtivo" class="modal-fundo" @click.self="fecharModal">
         <div class="modal-caixa">
-          <button class="fechar" @click="fecharModal">×</button>
+          <button class="fechar" @click="fecharModal" aria-label="Fechar">×</button>
           <span class="tag">{{ modalDado.titulo }}</span>
           <p class="modal-desc">{{ modalDado.descricaoCompleta }}</p>
           <ul class="modal-lista">
             <li v-for="item in modalDado.itens" :key="item">{{ item }}</li>
           </ul>
-          <router-link to="/contato" class="btn">Solicitar Consulta</router-link>
+          <router-link to="/contato" class="btn" @click="fecharModal">Solicitar Consulta</router-link>
         </div>
       </div>
     </transition>
@@ -134,7 +134,6 @@ export default {
       document.body.style.overflow = ''
     }
   },
-  // Garante limpeza caso o usuário navegue com o modal aberto
   beforeUnmount() {
     document.body.style.overflow = ''
   }
@@ -165,9 +164,9 @@ export default {
   padding: 0 32px;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
-  padding: 180px 0 100px;
+  padding: 140px 0 90px;
   border-bottom: 1px solid var(--borda);
 }
 
@@ -183,7 +182,7 @@ export default {
 
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-size: clamp(3rem, 8vw, 6.5rem);
   font-weight: 400;
   line-height: 1;
   margin: 0 0 28px;
@@ -204,7 +203,7 @@ export default {
   margin: 0;
 }
 
-/* ÁREAS GRID */
+/* ===== ÁREAS GRID ===== */
 .areas {
   padding: 80px 0;
 }
@@ -229,6 +228,13 @@ export default {
 
 .area-card:hover {
   background: var(--bg2);
+}
+
+/* Toque amigável em mobile */
+@media (hover: none) {
+  .area-card:active {
+    background: var(--bg2);
+  }
 }
 
 .numero {
@@ -288,7 +294,7 @@ export default {
   margin-top: 8px;
 }
 
-/* MODAL */
+/* ===== MODAL ===== */
 .modal-fundo {
   position: fixed;
   inset: 0;
@@ -299,6 +305,8 @@ export default {
   justify-content: center;
   z-index: 1000;
   padding: 24px;
+  /* Scroll interno caso o modal seja alto em telas pequenas */
+  overflow-y: auto;
 }
 
 .modal-caixa {
@@ -312,6 +320,9 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  /* Garante que não ultrapasse a tela em mobile */
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .fechar {
@@ -321,10 +332,16 @@ export default {
   background: none;
   border: none;
   color: var(--sub);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
   line-height: 1;
-  padding: 0;
+  padding: 4px 8px;
+  /* Área de toque maior em mobile */
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .fechar:hover { color: var(--texto); }
@@ -360,7 +377,7 @@ export default {
   color: var(--accent);
 }
 
-/* BOTÃO */
+/* ===== BOTÃO ===== */
 .btn {
   display: inline-block;
   padding: 13px 28px;
@@ -378,7 +395,7 @@ export default {
 
 .btn:hover { opacity: 0.85; }
 
-/* CTA */
+/* ===== CTA ===== */
 .cta {
   padding: 100px 0;
   border-top: 1px solid var(--borda);
@@ -387,7 +404,7 @@ export default {
 
 .cta h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
   font-weight: 400;
   margin: 0 0 16px;
 }
@@ -399,19 +416,122 @@ export default {
   margin: 0 0 36px;
 }
 
-/* TRANSIÇÃO */
+/* ===== TRANSIÇÃO ===== */
 .fade-enter-active, .fade-leave-active { transition: opacity 0.2s; }
-.fade-enter, .fade-leave-to { opacity: 0; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+/* ===== RESPONSIVIDADE ===== */
+
+/* TABLET */
+@media (max-width: 980px) {
+  .hero {
+    padding: 110px 0 70px;
+  }
+
+  .hero p {
+    max-width: 100%;
+  }
+
+  .areas {
+    padding: 60px 0;
+  }
+
+  .areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta {
+    padding: 70px 0;
+  }
 }
 
-@media (max-width: 600px) {
-  .hero { padding: 130px 0 70px; }
-  .areas-grid { grid-template-columns: 1fr; }
-  .area-card { padding: 28px 24px; }
-  .modal-caixa { padding: 36px 28px; }
+/* MOBILE */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .hero {
+    padding: 90px 0 56px;
+  }
+
+  .hero p {
+    font-size: 0.97rem;
+  }
+
+  .areas {
+    padding: 48px 0;
+  }
+
+  .area-card {
+    padding: 30px 28px;
+    gap: 12px;
+  }
+
+  .modal-caixa {
+    padding: 40px 28px;
+  }
+
+  .cta {
+    padding: 60px 0;
+  }
+
+  .cta p {
+    margin-bottom: 28px;
+  }
+}
+
+/* MOBILE PEQUENO */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 80px 0 48px;
+  }
+
+  .tag {
+    font-size: 0.62rem;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-card {
+    padding: 26px 20px;
+  }
+
+  .area-card h3 {
+    font-size: 1.35rem;
+  }
+
+  /* Modal ocupa quase toda a tela em celulares pequenos */
+  .modal-fundo {
+    padding: 16px;
+    align-items: flex-end;
+  }
+
+  .modal-caixa {
+    padding: 32px 20px 28px;
+    max-height: 85vh;
+    border-radius: 8px 8px 4px 4px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  .cta {
+    padding: 52px 0;
+  }
+
+  .cta .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 20px;
+  }
 }
 </style>
