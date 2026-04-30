@@ -27,7 +27,7 @@
       </div>
     </section>
 
-    <!-- SEÇÃO SOBRE -->
+    <!-- SEÇÃO SOBRE SEM FOTO -->
     <section class="sobre">
       <div class="container">
         <div class="sobre-conteudo">
@@ -45,8 +45,9 @@
               dedicamos atenção exclusiva a cada cliente, buscando sempre as melhores soluções
               jurídicas com discrição, agilidade e excelência.
             </p>
-            <router-link to="/sobre" class="botao-sobre">Conheça sobre nós</router-link>
+            <router-link to="/sobre" class="botao-sobre"> Conheça sobre nós  </router-link>
           </div>
+          <!-- div class="sobre-imagem" removida completamente -->
         </div>
       </div>
     </section>
@@ -193,7 +194,7 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* ===== VARIÁVEIS ===== */
+/* ===== VARIÁVEIS PADRONIZADAS - CINZA E AMARELO ===== */
 .pagina-inicial {
   --bg: #080808;
   --bg2: #0f0f0f;
@@ -216,17 +217,16 @@ export default {
   padding: 0 40px;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO SECTION ===== */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  /* background-attachment: scroll em vez de fixed — fixed quebra no iOS */
   background:
     linear-gradient(135deg, rgba(8, 8, 8, 0.95) 0%, rgba(8, 8, 8, 0.7) 100%),
     url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')
-      center/cover scroll;
+      center/cover fixed;
   padding: 120px 0;
 }
 
@@ -387,8 +387,9 @@ export default {
   margin: 0 0 30px 0;
 }
 
-/* ===== SOBRE ===== */
+/* ===== SOBRE (SEM FOTO) ===== */
 .sobre-conteudo {
+  /* Remove o grid de duas colunas */
   display: block;
   max-width: 800px;
   margin: 0 auto;
@@ -469,8 +470,7 @@ export default {
 .cta-final {
   position: relative;
   padding: 120px 0;
-  /* background-attachment: scroll em vez de fixed — fixed quebra no iOS */
-  background: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80') center/cover scroll;
+  background: url('https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80') center/cover fixed;
 }
 
 .cta-overlay {
@@ -607,8 +607,7 @@ export default {
 
 .icones-redes {
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .icone-rede {
@@ -623,6 +622,7 @@ export default {
   font-size: 1.2rem;
   transition: all 0.2s ease;
   border: 1px solid var(--borda);
+  border-radius: 0;
 }
 
 .icone-rede i {
@@ -649,171 +649,62 @@ export default {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-
-/* TABLET */
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
   .hero-titulo {
-    font-size: 3.4rem;
+    font-size: 3.5rem;
   }
-
-  .hero {
-    min-height: 82vh;
-    padding: 100px 0;
-  }
-
-  .sobre,
-  .diferenciais {
-    padding: 80px 0;
-  }
-
-  .cta-final {
-    padding: 80px 0;
-  }
-
   .grade-diferenciais {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .cabecalho-secao h2 {
-    font-size: 2.6rem;
-  }
-
-  .sobre-texto h2 {
-    font-size: 2.4rem;
-  }
-
-  .cta-conteudo h2 {
-    font-size: 2.6rem;
-  }
-
-  .rodape-grade {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  .rodape-info {
-    grid-column: 1 / -1;
   }
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .container {
     padding: 0 24px;
   }
-
   .hero {
-    min-height: auto;
-    padding: 100px 0 70px;
     text-align: left;
+    min-height: auto;
+    padding: 140px 0 80px;
   }
-
   .hero-titulo {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
-
-  .hero-descricao {
-    font-size: 1rem;
-    margin-bottom: 36px;
-  }
-
-  .sobre,
-  .diferenciais {
-    padding: 64px 0;
-  }
-
-  .cta-final {
-    padding: 64px 0;
-  }
-
-  .cabecalho-secao {
-    margin-bottom: 48px;
-  }
-
   .cabecalho-secao h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
-
-  .sobre-texto h2 {
-    font-size: 2rem;
-  }
-
-  .cta-conteudo h2 {
-    font-size: 2.2rem;
-  }
-
   .grade-diferenciais {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 48px;
   }
-
-  .rodape {
-    padding: 60px 0 32px;
-  }
-
   .rodape-grade {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 48px;
   }
-
-  .rodape-info {
-    grid-column: auto;
+  .icones-redes {
+    gap: 16px;
+  }
+  .icone-rede {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .icone-rede i {
+    font-size: 1rem;
   }
 }
 
-/* MOBILE PEQUENO */
 @media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-
   .hero-titulo {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
-
-  .hero-tagline {
-    font-size: 0.62rem;
-  }
-
   .hero-botoes {
     flex-direction: column;
-    gap: 14px;
   }
-
   .botao-primario,
   .botao-secundario {
     width: 100%;
     justify-content: center;
-    text-align: center;
-    padding: 15px 20px;
-  }
-
-  .cabecalho-secao h2 {
-    font-size: 1.9rem;
-  }
-
-  .sobre-texto h2 {
-    font-size: 1.8rem;
-  }
-
-  .cta-conteudo h2 {
-    font-size: 1.9rem;
-  }
-
-  .cta-conteudo p {
-    font-size: 0.95rem;
-  }
-
-  .botao-cta {
-    width: 100%;
-    text-align: center;
-    padding: 15px 20px;
-  }
-
-  .rodape-bottom p {
-    font-size: 0.72rem;
   }
 }
 </style>
