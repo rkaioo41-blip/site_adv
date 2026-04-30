@@ -120,6 +120,7 @@
               <li><router-link to="/">Início</router-link></li>
               <li><router-link to="/sobre">Sobre</router-link></li>
               <li><router-link to="/areas">Áreas de atuação</router-link></li>
+              <li><router-link to="/duvidas">Dúvidas</router-link></li>
               <li><router-link to="/contato">Contato</router-link></li>
             </ul>
           </div>

@@ -34,7 +34,7 @@
               </div>
               <div class="nome-cargo">
                 <h2>Jorge Luis Ferreira dos Santos</h2>
-                <span class="oab-label">Advogado · OAB/GO 77292</span>
+
               </div>
             </div>
 
@@ -278,13 +278,6 @@ export default {
   line-height: 1.3;
 }
 
-.oab-label {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--accent);
-  font-weight: 500;
-}
 
 .perfil-texto {
   padding-top: 6px;

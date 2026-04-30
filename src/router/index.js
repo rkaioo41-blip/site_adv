@@ -18,9 +18,9 @@ const routes = [
     component: () => import('../paginas/Areas.vue'),
   },
   {
-    path: '/equipe',
-    name: 'equipe',
-    component: () => import('../paginas/Equipe.vue'),
+    path: '/duvidas',
+    name: 'duvidas',
+    component: () => import('../paginas/FAQSecao.vue'),
   },
   {
     path: '/contato',
