@@ -235,14 +235,7 @@
     </main>
 
     <Transition name="fade">
-      <div
-        v-if="mostrarPolitica"
-        class="modal"
-        @click.self="mostrarPolitica = false"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-titulo"
-      >
+      <div v-if="mostrarPolitica" class="modal" @click.self="mostrarPolitica = false" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
         <div class="modal-conteudo">
           <header class="modal-header">
             <h3 id="modal-titulo">Política de Privacidade</h3>
@@ -299,43 +292,43 @@ export default {
     }
   },
   beforeUnmount() {
-    if (this.timeoutId) clearTimeout(this.timeoutId)
+    if (this.timeoutId) clearTimeout(this.timeoutId);
   },
   methods: {
     aplicarMascaraTelefone(event) {
-      let v = event.target.value.replace(/\D/g, '')
-      v = v.replace(/^(\d{2})(\d)/g, '($1) $2')
-      v = v.replace(/(\d)(\d{4})$/, '$1-$2')
-      this.form.telefone = v
+      let v = event.target.value.replace(/\D/g, '');
+      v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+      v = v.replace(/(\d)(\d{4})$/, '$1-$2');
+      this.form.telefone = v;
     },
     limparAlertas() {
-      this.mensagemSucesso = null
-      this.mensagemErro = null
-      if (this.timeoutId) clearTimeout(this.timeoutId)
+      this.mensagemSucesso = null;
+      this.mensagemErro = null;
+      if (this.timeoutId) clearTimeout(this.timeoutId);
     },
     validarFormulario() {
       if (!this.form.nome || !this.form.email || !this.form.mensagem || !this.form.area) {
-        this.mensagemErro = 'Por favor, preencha todos os campos obrigatórios (*).'
-        return false
+        this.mensagemErro = 'Por favor, preencha todos os campos obrigatórios (*).';
+        return false;
       }
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(this.form.email)) {
-        this.mensagemErro = 'Por favor, insira um e-mail válido.'
-        return false
+        this.mensagemErro = 'Por favor, insira um e-mail válido.';
+        return false;
       }
       if (!this.form.aceiteLGPD) {
-        this.mensagemErro = 'Você precisa aceitar a Política de Privacidade para enviar a mensagem.'
-        return false
+        this.mensagemErro = 'Você precisa aceitar a Política de Privacidade para enviar a mensagem.';
+        return false;
       }
-      return true
+      return true;
     },
     async enviarContato() {
-      this.limparAlertas()
+      this.limparAlertas();
       if (!this.validarFormulario()) {
-        this.rolarParaTopo()
-        return
+        this.rolarParaTopo();
+        return;
       }
-      this.enviando = true
+      this.enviando = true;
       try {
         await api.post('/contatos', {
           contato: {
@@ -346,48 +339,50 @@ export default {
             assunto: this.form.assunto || 'Não informado',
             mensagem: this.form.mensagem
           }
-        })
+        });
         this.mensagemSucesso = {
           titulo: '✓ Mensagem enviada com sucesso!',
           texto: `Olá ${this.form.nome}, recebemos sua mensagem sobre ${this.form.area}. Um de nossos advogados entrará em contato em breve pelo e-mail ${this.form.email}. Agradecemos o contato!`
-        }
-        this.resetarFormulario()
-        this.rolarParaTopo()
-        this.timeoutId = setTimeout(() => { this.mensagemSucesso = null }, 8000)
+        };
+        this.resetarFormulario();
+        this.rolarParaTopo();
+        this.timeoutId = setTimeout(() => { this.mensagemSucesso = null; }, 8000);
       } catch (error) {
-        console.error('Erro ao enviar contato:', error)
+        console.error('Erro ao enviar contato:', error);
         if (error.response?.data?.errors) {
-          this.mensagemErro = error.response.data.errors.join(', ')
+          this.mensagemErro = error.response.data.errors.join(', ');
         } else if (error.request) {
-          this.mensagemErro = 'Erro de conexão. Verifique sua internet ou tente novamente mais tarde.'
+          this.mensagemErro = 'Erro de conexão. Verifique sua internet ou tente novamente mais tarde.';
         } else {
-          this.mensagemErro = 'Ocorreu um erro inesperado. Tente novamente.'
+          this.mensagemErro = 'Ocorreu um erro inesperado. Tente novamente.';
         }
-        this.rolarParaTopo()
-        this.timeoutId = setTimeout(() => { this.mensagemErro = null }, 6000)
+        this.rolarParaTopo();
+        this.timeoutId = setTimeout(() => { this.mensagemErro = null; }, 6000);
       } finally {
-        this.enviando = false
+        this.enviando = false;
       }
     },
     resetarFormulario() {
-      this.form = { nome: '', email: '', telefone: '', area: '', assunto: '', mensagem: '', aceiteLGPD: false }
+      this.form = { nome: '', email: '', telefone: '', area: '', assunto: '', mensagem: '', aceiteLGPD: false };
     },
     rolarParaTopo() {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 }
 </script>
 
 <style scoped>
-/* ===== VARIÁVEIS ===== */
+/* =========================================
+   VARIÁVEIS GLOBAIS - CINZA E AMARELO (padronizado com Areas.vue)
+   ========================================= */
 .pagina-contato {
   --bg: #080808;
   --bg2: #0f0f0f;
   --texto: #e8e6e1;
   --sub: #888;
   --borda: rgba(255, 255, 255, 0.08);
-  --accent: #b09060;
+  --accent: #b09060;      /* amarelo/dourado */
   --accent-hover: #c9a86b;
 
   background: var(--bg);
@@ -397,16 +392,18 @@ export default {
 }
 
 .conteudo {
-  padding: 70px 0 80px;
+  padding: 60px 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 20px;
 }
 
-/* ===== CABEÇALHO ===== */
+/* =========================================
+   CABEÇALHO DA PÁGINA
+   ========================================= */
 .cabecalho-pagina {
   text-align: center;
   margin-bottom: 60px;
@@ -416,27 +413,29 @@ export default {
   color: var(--texto);
   font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 
 .cabecalho-pagina p {
   color: var(--sub);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
-/* ===== CARDS DE CONTATO ===== */
+/* =========================================
+   CARDS DE CONTATO (REDES SOCIAIS)
+   ========================================= */
 .grade-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .card-contato {
   background: var(--bg2);
   border: 1px solid var(--borda);
   border-radius: 4px;
-  padding: 40px 28px;
+  padding: 40px 30px;
   text-decoration: none;
   color: var(--texto);
   transition: all 0.3s ease;
@@ -470,15 +469,8 @@ export default {
   transform: translateX(0);
 }
 
-/* Toque amigável em mobile */
-@media (hover: none) {
-  .card-contato:active {
-    border-color: rgba(176, 144, 96, 0.3);
-  }
-}
-
 .icone-card {
-  margin-bottom: 22px;
+  margin-bottom: 25px;
   color: var(--accent);
   transition: transform 0.3s ease;
 }
@@ -488,23 +480,22 @@ export default {
 }
 
 .card-contato h3 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
   font-weight: 500;
 }
 
 .card-contato p {
   color: var(--sub);
-  margin-bottom: 14px;
-  font-size: 0.92rem;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
 }
 
 .info-card {
   color: var(--accent);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-bottom: 20px;
-  word-break: break-all;
 }
 
 .acao-card {
@@ -514,7 +505,6 @@ export default {
   color: var(--accent);
   font-weight: 500;
   margin-top: auto;
-  font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
@@ -522,12 +512,14 @@ export default {
   color: var(--texto);
 }
 
-/* ===== INFORMAÇÕES ADICIONAIS ===== */
+/* =========================================
+   INFORMAÇÕES ADICIONAIS
+   ========================================= */
 .info-adicional {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
   padding: 40px;
   background: var(--bg2);
   border-radius: 4px;
@@ -540,31 +532,29 @@ export default {
 
 .item-info h4 {
   color: var(--accent);
-  font-size: 1rem;
-  margin-bottom: 12px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
   font-weight: 500;
 }
 
-.item-info p,
-.item-info address {
+.item-info p, .item-info address {
   color: var(--sub);
   line-height: 1.6;
   font-style: normal;
-  font-size: 0.92rem;
 }
 
 .link-texto {
   color: var(--sub);
   text-decoration: none;
   transition: color 0.3s;
-  word-break: break-all;
 }
-
 .link-texto:hover {
   color: var(--accent);
 }
 
-/* ===== FORMULÁRIO ===== */
+/* =========================================
+   FORMULÁRIO DE CONTATO
+   ========================================= */
 .container-formulario {
   background: var(--bg2);
   border-radius: 4px;
@@ -615,10 +605,7 @@ export default {
   border-radius: 2px;
   color: var(--texto);
   font-size: 0.95rem;
-  font-family: inherit;
   transition: all 0.2s ease;
-  /* Evita zoom automático no iOS ao focar em inputs */
-  font-size: 16px;
 }
 
 .grupo-form input:focus,
@@ -660,19 +647,15 @@ export default {
 
 .checkbox-label input[type="checkbox"] {
   width: auto;
-  /* Tamanho mínimo tocável em mobile */
-  min-width: 20px;
-  min-height: 20px;
-  margin-top: 2px;
+  margin-top: 3px;
   cursor: pointer;
   accent-color: var(--accent);
-  font-size: unset;
 }
 
 .checkbox-label span {
   color: var(--sub);
   font-size: 0.85rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .checkbox-label a {
@@ -689,13 +672,13 @@ export default {
 /* BOTÃO ENVIAR */
 .botao-enviar {
   width: 100%;
-  padding: 15px 30px;
+  padding: 14px 30px;
   background: var(--accent);
   border: none;
   border-radius: 2px;
   color: #080808;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
@@ -704,8 +687,6 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  /* Altura mínima tocável em mobile */
-  min-height: 50px;
 }
 
 .botao-enviar:hover:not(:disabled) {
@@ -719,14 +700,14 @@ export default {
   transform: none;
 }
 
-/* FEEDBACKS */
+/* FEEDBACKS (sucesso/erro) */
 .feedback {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 15px;
   padding: 18px 20px;
   border-radius: 4px;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .feedback.sucesso {
@@ -745,15 +726,12 @@ export default {
 
 .feedback svg { flex-shrink: 0; }
 .feedback strong { display: block; margin-bottom: 5px; font-size: 0.9rem; }
-.feedback p { margin: 0; font-size: 0.85rem; line-height: 1.5; }
+.feedback p { margin: 0; font-size: 0.85rem; line-height: 1.4; }
 
-.fade-enter-active,
-.fade-leave-active {
+.fade-enter-active, .fade-leave-active {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
-.fade-enter-from,
-.fade-leave-to {
+.fade-enter-from, .fade-leave-to {
   opacity: 0;
   transform: translateY(-8px);
 }
@@ -763,7 +741,6 @@ export default {
   align-items: center;
   gap: 8px;
 }
-
 .spinner {
   border: 2px solid rgba(8, 8, 8, 0.2);
   border-left-color: #080808;
@@ -772,12 +749,11 @@ export default {
   height: 14px;
   animation: spin 0.8s linear infinite;
 }
-
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
-/* ===== MODAL POLÍTICA DE PRIVACIDADE ===== */
+/* MODAL DE POLÍTICA DE PRIVACIDADE */
 .modal {
   position: fixed;
   inset: 0;
@@ -787,8 +763,7 @@ export default {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 20px;
-  overflow-y: auto;
+  padding: 24px;
 }
 
 .modal-conteudo {
@@ -796,8 +771,8 @@ export default {
   border: 1px solid var(--borda);
   border-radius: 4px;
   max-width: 550px;
-  width: 100%;
-  max-height: 88vh;
+  width: 90%;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
 }
@@ -806,15 +781,14 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
+  padding: 20px 25px;
   border-bottom: 1px solid var(--borda);
-  flex-shrink: 0;
 }
 
 .modal-header h3 {
   color: var(--accent);
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -822,246 +796,66 @@ export default {
   background: none;
   border: none;
   color: var(--sub);
-  font-size: 1.6rem;
+  font-size: 28px;
   cursor: pointer;
   transition: color 0.2s;
-  /* Área de toque confortável */
-  min-width: 40px;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
 }
-
 .modal-header .fechar:hover { color: var(--accent); }
 
 .modal-body {
-  padding: 24px;
+  padding: 25px;
   overflow-y: auto;
   color: var(--sub);
   line-height: 1.6;
   font-size: 0.9rem;
-  flex: 1;
 }
 
-.modal-body p { margin-bottom: 14px; }
-.modal-body ul { margin: 8px 0 18px 20px; }
+.modal-body p { margin-bottom: 15px; }
+.modal-body ul { margin: 10px 0 20px 20px; }
 .modal-body li { margin-bottom: 6px; }
 .modal-body a { color: var(--accent); }
 
 .modal-footer {
-  padding: 18px 24px;
+  padding: 20px 25px;
   border-top: 1px solid var(--borda);
   text-align: center;
-  flex-shrink: 0;
 }
 
 .botao-fechar {
   background: var(--accent);
   color: #080808;
   border: none;
-  padding: 11px 32px;
+  padding: 10px 30px;
   border-radius: 2px;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s;
-  min-height: 44px;
 }
-
 .botao-fechar:hover {
   background: var(--accent-hover);
 }
 
-/* ===== RESPONSIVIDADE ===== */
-
-/* TABLET */
-@media (max-width: 980px) {
-  .conteudo {
-    padding: 56px 0 64px;
-  }
-
-  .cabecalho-pagina {
-    margin-bottom: 44px;
-  }
-
-  .grade-cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-
-  .card-contato {
-    padding: 30px 20px;
-  }
-
-  .info-adicional {
-    padding: 30px 24px;
-    gap: 16px;
-  }
-
-  .container-formulario {
-    padding: 40px 36px;
-  }
-}
-
-/* MOBILE */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 20px;
-  }
-
-  .conteudo {
-    padding: 48px 0 56px;
-  }
-
-  .cabecalho-pagina h1 {
-    font-size: 2rem;
-  }
-
-  .cabecalho-pagina p {
-    font-size: 0.97rem;
-  }
-
-  /* Cards empilham em coluna única */
-  .grade-cards {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* Cards em linha no mobile para economizar espaço */
-  .card-contato {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    padding: 22px 20px;
-    gap: 18px;
-  }
-
-  .icone-card {
-    margin-bottom: 0;
-    flex-shrink: 0;
-  }
-
-  .icone-card svg {
-    width: 36px;
-    height: 36px;
-  }
-
-  .card-contato-corpo {
-    flex: 1;
-  }
-
-  .acao-card {
-    margin-top: 6px;
-  }
-
-  /* Infos em coluna */
-  .info-adicional {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 28px 20px;
-  }
-
-  .item-info {
-    text-align: left;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--borda);
-  }
-
-  .item-info:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-
-  /* Formulário */
-  .container-formulario {
-    padding: 32px 20px;
-  }
-
-  .container-formulario h3 {
-    font-size: 1.5rem;
-    margin-bottom: 28px;
-  }
-
+  .cabecalho-pagina h1 { font-size: 2rem; }
   .grade-formulario {
     grid-template-columns: 1fr;
     gap: 0;
-    margin-bottom: 0;
   }
+  .container-formulario,
+  .info-adicional {
+    padding: 30px 20px;
+  }
+  .container-formulario h3 { font-size: 1.5rem; }
+  .modal-conteudo { width: 95%; margin: 20px; }
 }
 
-/* MOBILE PEQUENO */
 @media (max-width: 480px) {
-  .container {
-    padding: 0 16px;
-  }
-
-  .conteudo {
-    padding: 40px 0 48px;
-  }
-
-  .cabecalho-pagina h1 {
-    font-size: 1.7rem;
-  }
-
-  .cabecalho-pagina {
-    margin-bottom: 32px;
-  }
-
-  .card-contato {
-    padding: 18px 16px;
-    gap: 14px;
-  }
-
-  .icone-card svg {
-    width: 30px;
-    height: 30px;
-  }
-
-  .card-contato h3 {
-    font-size: 1.1rem;
-  }
-
-  .card-contato p {
-    font-size: 0.82rem;
-    margin-bottom: 4px;
-  }
-
-  .info-card {
-    font-size: 0.82rem;
-    margin-bottom: 4px;
-  }
-
-  .acao-card {
-    font-size: 0.8rem;
-  }
-
-  .container-formulario {
-    padding: 28px 16px;
-  }
-
-  .feedback {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* Modal ocupa praticamente a tela toda em celulares pequenos */
-  .modal {
-    padding: 12px;
-    align-items: flex-end;
-  }
-
-  .modal-conteudo {
-    max-height: 90vh;
-    border-radius: 8px 8px 4px 4px;
-  }
-
-  .botao-fechar {
-    width: 100%;
-    padding: 13px 20px;
-  }
+  .conteudo { padding: 40px 0; }
+  .cabecalho-pagina h1 { font-size: 1.8rem; }
+  .card-contato { padding: 30px 20px; }
 }
 </style>
