@@ -46,7 +46,7 @@
         <router-link @click="fecharMenu" to="/">INÍCIO</router-link>
         <router-link @click="fecharMenu" to="/sobre">SOBRE</router-link>
         <router-link @click="fecharMenu" to="/areas">ÁREAS</router-link>
-        <router-link @click="fecharMenu" to="/duvida">DÚVIDAS</router-link>
+        <router-link @click="fecharMenu" to="/duvidas">DÚVIDAS</router-link>
         <router-link @click="fecharMenu" to="/contato">CONTATO</router-link>
 
         <router-link
